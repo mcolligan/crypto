@@ -29,6 +29,7 @@ class Chart extends React.Component {
           <div>
             <h3>Charts Here</h3>
             <ChartLines info={this.state} />
+            <h6><i><em>Powered by Coindesk</em></i></h6>
           </div>
         }
       </div>

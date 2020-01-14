@@ -19,6 +19,11 @@ class ChartLines extends React.Component {
           {
           label: "Close Price",
           data: [...this.props.info.close],
+          borderColor: "#F5B041",
+          pointBackgroundColor: "#17202A",
+          backgroundColor: [
+            "#73C6B6"
+          ]
           }
         ]
       },
