@@ -1,13 +1,18 @@
 import React from 'react';
-import axios from 'axios';
 
 class Chart extends React.Component {
   constructor() {
     super();
+    this.state = {
+
+    }
   }
 
   componentDidMount() {
-    fetch('/chart')
+    fetch('/chart').then(res => res.json())
+    .then((data) => {
+      console.log(data);
+    })
   }
 
   render() {
