@@ -26,10 +26,12 @@ class Chart extends React.Component {
     return (
       <div>
         {this.state.loaded &&
-          <div>
-            <h3>Charts Here</h3>
-            <ChartLines info={this.state} />
+          <div className="container">
+            <div className="header-row">
+              <h2 className="h4 text-monospace">BitCoin (BTC) - Last 30 days (USD)</h2>
+                <ChartLines info={this.state} />
             <h6><i><em>Powered by Coindesk</em></i></h6>
+            </div>
           </div>
         }
       </div>

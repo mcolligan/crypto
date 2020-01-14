@@ -17,18 +17,34 @@ class ChartLines extends React.Component {
         labels: [...this.props.info.day],
         datasets: [
           {
-          label: "Close Price",
-          data: [...this.props.info.close],
-          borderColor: "#F5B041",
-          pointBackgroundColor: "#17202A",
-          backgroundColor: [
-            "#73C6B6"
-          ]
+            label: "Close Price",
+            data: [...this.props.info.close],
+            borderColor: "#F5B041",
+            pointBackgroundColor: "#17202A",
+            backgroundColor: [
+              "#73C6B6"
+            ]
           }
         ]
       },
       options: {
-
+        scales: {
+          xAxes: [{
+            type: 'time',
+            time: {
+              displayFormats: {
+                week: 'll'
+              }
+            }
+          }],
+          yAxes: [{
+            ticks: {
+              callback: function(value, index, values) {
+                return `$ ${value}`;
+              }
+            }
+          }]
+        }
       }
     });
   }
@@ -36,7 +52,7 @@ class ChartLines extends React.Component {
   render() {
     return (
       <div>
-        <canvas id="myChart" ref={this.chartRef}/>
+        <canvas id="myChart" ref={this.chartRef} />
       </div>
     )
   }
