@@ -15,6 +15,12 @@ app.get('/chart', (req, res) => {
   })
 });
 
+app.get('/current', (req, res) => {
+  conn.getCurrent((data) => {
+    res.send(data);
+  })
+})
+
 app.listen('3000', () => {
   console.log('Hey good lookin');
 });

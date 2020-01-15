@@ -8,7 +8,8 @@ class App extends React.Component {
     return (
       <div>
         <div className="jumbotron jumbotron-fluid">
-          <h1>Hi There</h1>
+        <h1 className="display-4">BitCoin Tracker</h1>
+        <p>Updates on every refresh.....</p>
         </div>
         <Chart />
       </div>

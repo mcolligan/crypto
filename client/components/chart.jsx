@@ -1,5 +1,6 @@
 import React from 'react';
 import ChartLines from './chartLines.jsx';
+import Current from './current.jsx';
 
 class Chart extends React.Component {
   constructor() {
@@ -7,6 +8,7 @@ class Chart extends React.Component {
     this.state = {
       day: [],
       close: [],
+      updated: '',
       loaded: false
     }
   }
@@ -30,6 +32,7 @@ class Chart extends React.Component {
             <div className="header-row">
               <h2 className="h4 text-monospace">BitCoin (BTC) - Last 30 days (USD)</h2>
                 <ChartLines info={this.state} />
+                <Current />
             <h6><i><em>Powered by Coindesk</em></i></h6>
             </div>
           </div>

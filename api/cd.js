@@ -5,9 +5,19 @@ const getData = (cb) => {
     if (err) {
       cb(err);
     } else {
-      cb(res.body)
+      cb(res.body);
     }
   })
 }
 
-module.exports = { getData };
+const getCurrent = (cb) => {
+  request.get('https://api.coindesk.com/v1/bpi/currentprice/USD.json', (err, res) => {
+    if (err) {
+      cb(err);
+    } else {
+      cb(res.body);
+    }
+  })
+}
+
+module.exports = { getData, getCurrent };
