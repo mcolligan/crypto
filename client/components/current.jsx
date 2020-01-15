@@ -6,6 +6,7 @@ class Current extends React.Component {
     super();
     this.state = {
       current: '',
+      rate: '',
       updated: '',
       move: '',
       loaded: false
@@ -32,6 +33,7 @@ class Current extends React.Component {
         }
         this.setState({
           current: (curr - stor).toFixed(2),
+          rate: curr,
           update: data.time.updated,
           move: mov,
           loaded: true
@@ -46,6 +48,7 @@ class Current extends React.Component {
           <div className="container">
             <div className="card">
               <h5 className="card-title"><u>Current Rate:</u></h5>
+              <h2 className="card-text">$ {this.state.rate} (USD)</h2>
               {this.state.move === '+' &&
                 <h1 className="card-text text-left" style={{ color: 'green' }}>&#8682; ${this.state.current}</h1>
               }
